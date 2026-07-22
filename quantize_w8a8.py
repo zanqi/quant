@@ -115,7 +115,7 @@ open(os.path.join(OUT_DIR, "README.md"), "w").write(card)
 # push
 print(f"[3/4] Creating repo {REPO_ID}...", flush=True)
 api = HfApi()
-api.create_repo(REPO_ID, exist_ok=True, private=False repo_type="model")
+api.create_repo(REPO_ID, exist_ok=True, private=False, repo_type="model")
 
 print(f"[4/4] Uploading {OUT_DIR} -> {REPO_ID}...", flush=True)
 api.upload_large_folder(repo_id=REPO_ID, folder_path=OUT_DIR, repo_type="model")
